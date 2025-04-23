@@ -1,0 +1,33 @@
+public class HammingDistance {
+    // Function to calculate Hamming Distance
+    public static int calculateHammingDistance(String str1, String str2) {
+        // If strings are not of the same length, return -1
+        if (str1.length() != str2.length()) {
+            return -1;
+        }
+
+        int distance = 0;
+
+        // Compare corresponding characters in both strings
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                distance++;
+            }
+        }
+
+        return distance;
+    }
+
+    public static void main(String[] args) {
+        String str1 = "karolin";
+        String str2 = "kathrin";
+
+        int hammingDistance = calculateHammingDistance(str1, str2);
+        
+        if (hammingDistance != -1) {
+            System.out.println("Hamming Distance: " + hammingDistance);
+        } else {
+            System.out.println("Strings must have the same length.");
+        }
+    }
+}
